@@ -1,0 +1,220 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						5,
+						6,
+						7
+					]
+				},
+				{
+					"build" : "external/taglib",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-external.taglib-Debug-9b73248ab7546605d07b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "external/taglib",
+					"targetIndexes" : 
+					[
+						0,
+						8
+					]
+				},
+				{
+					"build" : "external/taglib/taglib",
+					"jsonFile" : "directory-external.taglib.taglib-Debug-cb00cefcbb0ee7154818.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4.3"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "external/taglib/taglib",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "external/taglib/bindings",
+					"childIndexes" : 
+					[
+						4
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-external.taglib.bindings-Debug-842db97f81a7c7ae78d2.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "external/taglib/bindings"
+				},
+				{
+					"build" : "external/taglib/bindings/c",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-external.taglib.bindings.c-Debug-2117dc85fd9d7d0f38ca.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.0"
+					},
+					"parentIndex" : 3,
+					"projectIndex" : 1,
+					"source" : "external/taglib/bindings/c",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "trackInfo",
+					"targetIndexes" : 
+					[
+						5,
+						6,
+						7
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "taglib",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "docs::@1ce640cebc06c6e81b4f",
+					"jsonFile" : "target-docs-Debug-0a9cbaf40cfa80d1feec.json",
+					"name" : "docs",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tag_c::@a93f38fb4683a8c947e5",
+					"jsonFile" : "target-tag_c-Debug-7d533ad98a5f4ea95a07.json",
+					"name" : "tag_c",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tag_c_autogen::@a93f38fb4683a8c947e5",
+					"jsonFile" : "target-tag_c_autogen-Debug-35d778abfc4a97d7c742.json",
+					"name" : "tag_c_autogen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "tag_c_autogen_timestamp_deps::@a93f38fb4683a8c947e5",
+					"jsonFile" : "target-tag_c_autogen_timestamp_deps-Debug-af31c631bc0f421e5466.json",
+					"name" : "tag_c_autogen_timestamp_deps",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "taglib::@6be470a8f32be52caafd",
+					"jsonFile" : "target-taglib-Debug-9bf261c84397915cf774.json",
+					"name" : "taglib",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trackInfo::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trackInfo-Debug-c33723713acf8ff705c8.json",
+					"name" : "trackInfo",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trackInfo_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trackInfo_autogen-Debug-840e4d4ff0619576d2b2.json",
+					"name" : "trackInfo_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "trackInfo_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-trackInfo_autogen_timestamp_deps-Debug-28396cb596d5e8dd962e.json",
+					"name" : "trackInfo_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "uninstall::@1ce640cebc06c6e81b4f",
+					"jsonFile" : "target-uninstall-Debug-21fb8826cf9bb3e06a74.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/aevans/trackInfo/cmake-build-debug",
+		"source" : "/Users/aevans/trackInfo"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

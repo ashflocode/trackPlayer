@@ -1,0 +1,6 @@
+<RCC>
+    <qresource>
+        <file alias="ui">ui.qml</file>
+        <file alias="AlbumArtPlaceholder">AlbumArtPlaceholder.png</file>
+    </qresource>
+</RCC>
