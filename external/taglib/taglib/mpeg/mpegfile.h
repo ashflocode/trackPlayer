@@ -84,7 +84,7 @@ namespace TagLib {
        * \deprecated This constructor will be dropped in favor of the one below
        * in a future version.
        */
-      File(FileName file, bool readProperties = true,
+      File(FileName file, bool readProperties = false,
            Properties::ReadStyle propertiesStyle = Properties::Average);
 
       /*!

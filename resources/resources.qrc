@@ -1,6 +1,67 @@
 <RCC>
-    <qresource>
-        <file alias="ui">ui.qml</file>
-        <file alias="AlbumArtPlaceholder">AlbumArtPlaceholder.png</file>
+    <qresource prefix="/ui">
+        <file>Qml/qmldir</file>
+        <file>Qml/MainWindow.qml</file>
+
+        <file>Qml/Audio/Cue.qml</file>
+        <file>Qml/Audio/Delay.qml</file>
+        <file>Qml/Audio/Filter.qml</file>
+        <file>Qml/Audio/Loop.qml</file>
+
+        <file>Qml/Database/Database.qml</file>
+        <file>Qml/Database/Field.qml</file>
+        <file>Qml/Database/FilterBar.qml</file>
+        <file>Qml/Database/Playlist.qml</file>
+        <file>Qml/Database/PlaylistBar.qml</file>
+        <file>Qml/Database/SplitLine.qml</file>
+        <file>Qml/Database/Tracklist.qml</file>
+
+        <file>Qml/Extras/ColorPalette.qml</file>
+        <file>Qml/Extras/CustomDial.qml</file>
+        <file>Qml/Extras/GeneralPopup.qml</file>
+        <file>Qml/Extras/InformationPopup.qml</file>
+        <file>Qml/Extras/KeyboardControls.qml</file>
+        <file>Qml/Extras/MainText.qml</file>
+
+        <file>Qml/Metadata/Artwork.qml</file>
+        <file>Qml/Metadata/Cell.qml</file>
+        <file>Qml/Metadata/Edit.qml</file>
+        <file>Qml/Metadata/Metadata.qml</file>
+        <file>Qml/Metadata/PlaybackLength.qml</file>
+
+        <file>Qml/Playback/Playback.qml</file>
+        <file>Qml/Playback/SelectTrackOverlay.qml</file>
+        <file>Qml/Playback/TrackLoader.qml</file>
+        <file>Qml/Playback/Transport.qml</file>
+        <file>Qml/Playback/TransportButton.qml</file>
+
+        <file>Qml/Settings/Settings.qml</file>
+        <file>Qml/Settings/SettingsEntry.qml</file>
+        <file>Qml/Settings/SettingsEntryButton.qml</file>
+        <file>Qml/Settings/SettingsEntryToggle.qml</file>
+        <file>Qml/Settings/ToolBarButton.qml</file>
+
+        <file>Qml/Waveform/Waveform.qml</file>
+        <file>Qml/Waveform/WaveformBase.qml</file>
+        <file>Qml/Waveform/WaveformOverview.qml</file>
+        <file>Qml/Waveform/Waveforms.qml</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file alias="bold">Fonts/RobotoBold.ttf</file>
+        <file alias="regular">Fonts/RobotoRegular.ttf</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file alias="artwork">Images/AlbumArtPlaceholder.png</file>
+        <file alias="addPlaylist">Images/IconAddPlaylist.svg</file>
+        <file alias="edit">Images/IconEdit.svg</file>
+        <file alias="eject">Images/IconEject.svg</file>
+        <file alias="info">Images/IconInfo.svg</file>
+        <file alias="loop">Images/IconLoop.svg</file>
+        <file alias="order">Images/IconOrder.svg</file>
+        <file alias="pause">Images/IconPause.svg</file>
+        <file alias="play">Images/IconPlay.svg</file>
+        <file alias="settings">Images/IconSettings.svg</file>
+        <file alias="stop">Images/IconStop.svg</file>
+        <file alias="trackStart">Images/IconTrackStart.svg</file>
     </qresource>
 </RCC>

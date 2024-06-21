@@ -78,7 +78,7 @@ MPEG::Header::Header(const ByteVector &data) :
 MPEG::Header::Header(File *file, long offset, bool checkLength) :
   d(new HeaderPrivate())
 {
-  parse(file, offset, checkLength);
+//  parse(file, offset, checkLength);
 }
 
 MPEG::Header::Header(const Header &h) :

@@ -1,22 +1,16 @@
-cmake_minimum_required(VERSION 2.8.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.2)
+project(Taglib)
 
-project(taglib)
-
-if(NOT ${CMAKE_VERSION} VERSION_LESS 2.8.12)
-  cmake_policy(SET CMP0022 OLD)
-endif()
+#if(NOT ${CMAKE_VERSION} VERSION_LESS 2.8.12)
+#  cmake_policy(SET CMP0022 OLD)
+#endif()
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules")
-
-if(DEFINED ENABLE_STATIC)
-  message(FATAL_ERROR "This option is no longer available, use BUILD_SHARED_LIBS instead")
-endif()
 
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
 if(NOT BUILD_SHARED_LIBS)
   add_definitions(-DTAGLIB_STATIC)
 endif()
-option(ENABLE_STATIC_RUNTIME "Visual Studio, link with runtime statically" OFF)
 
 option(ENABLE_CCACHE "Use ccache when building libtag" OFF)
 if(ENABLE_CCACHE)
@@ -32,14 +26,7 @@ if(VISIBILITY_HIDDEN)
   add_definitions(-fvisibility=hidden)
 endif()
 
-option(BUILD_TESTS "Build the test suite" OFF)
-option(BUILD_EXAMPLES "Build the examples" OFF)
-option(BUILD_BINDINGS "Build the bindings" ON)
-
-option(NO_ITUNES_HACKS "Disable workarounds for iTunes bugs" OFF)
-
 add_definitions(-DHAVE_CONFIG_H)
-set(TESTS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/tests/")
 
 ## the following are directories where stuff will be installed to
 set(LIB_SUFFIX "" CACHE STRING "Define suffix of directory name (32/64)")
@@ -130,35 +117,7 @@ if(WITH_MP4)
   set(TAGLIB_WITH_MP4 TRUE)
 endif()
 
-option(TRACE_IN_RELEASE "Output debug messages even in release mode" OFF)
-if(TRACE_IN_RELEASE)
-  set(TRACE_IN_RELEASE TRUE)
-endif()
-
-configure_file(taglib/taglib_config.h.cmake "${CMAKE_CURRENT_BINARY_DIR}/taglib_config.h")
-
 add_subdirectory(taglib)
 
-if(BUILD_BINDINGS)
-  add_subdirectory(bindings)
-endif()
-
-if(BUILD_TESTS AND NOT BUILD_SHARED_LIBS)
-  enable_testing()
-  add_subdirectory(tests)
-endif()
-
-if(BUILD_EXAMPLES)
-  add_subdirectory(examples)
-endif()
-
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.cmake" "${CMAKE_CURRENT_BINARY_DIR}/Doxyfile")
-file(COPY doc/taglib.png DESTINATION doc)
 add_custom_target(docs doxygen)
-
-# uninstall target
-configure_file("${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in" "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake" IMMEDIATE @ONLY)
-
-if(NOT TARGET uninstall)
-  add_custom_target(uninstall COMMAND "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
-endif()

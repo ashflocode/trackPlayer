@@ -1,0 +1,44 @@
+module Qml
+
+Cue 1.0 Audio/Cue.qml
+Delay 1.0 Audio/Delay.qml
+Filter 1.0 Audio/Filter.qml
+Loop 1.0 Audio/Loop.qml
+
+Database 1.0 Database/Database.qml
+Field 1.0 Database/Field.qml
+FilterBar 1.0 Database/FilterBar.qml
+Playlist 1.0 Database/Playlist.qml
+PlaylistBar 1.0 Database/PlaylistBar.qml
+SplitLine 1.0 Database/SplitLine.qml
+Tracklist 1.0 Database/Tracklist.qml
+
+singleton ColorPalette 1.0 Extras/ColorPalette.qml
+CustomDial 1.0 Extras/CustomDial.qml
+GeneralPopup 1.0 Extras/GeneralPopup.qml
+InformationPopup 1.0 Extras/InformationPopup.qml
+KeyboardControls 1.0 Extras/KeyboardControls.qml
+MainText 1.0 Extras/MainText.qml
+
+Artwork 1.0 Metadata/Artwork.qml
+Cell 1.0 Metadata/Cell.qml
+Edit 1.0 Metadata/Edit.qml
+Metadata 1.0 Metadata/Metadata.qml
+PlaybackLength 1.0 Metadata/PlaybackLength.qml
+
+Playback 1.0 Playback/Playback.qml
+SelectTrackOverlay 1.0 Playback/SelectTrackOverlay.qml
+TrackLoader 1.0 Playback/TrackLoader.qml
+Transport 1.0 Playback/Transport.qml
+TransportButton 1.0 Playback/TransportButton.qml
+
+Settings 1.0 Settings/Settings.qml
+SettingsEntry 1.0 Settings/SettingsEntry.qml
+SettingsEntryButton 1.0 Settings/SettingsEntryButton.qml
+SettingsEntryToggle 1.0 Settings/SettingsEntryToggle.qml
+ToolBarButton 1.0 Settings/ToolBarButton.qml
+
+Waveform 1.0 Waveform/Waveform.qml
+WaveformBase 1.0 Waveform/WaveformBase.qml
+WaveformOverview 1.0 Waveform/WaveformOverview.qml
+Waveforms 1.0 Waveform/Waveforms.qml

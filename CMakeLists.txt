@@ -1,34 +1,57 @@
-cmake_minimum_required(VERSION 3.26)
-project(trackInfo)
+cmake_minimum_required(VERSION 3.2)
+project(TrackPlayer)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
 
-#Qt
-set(CMAKE_PREFIX_PATH "/Users/aevans/Qt/Qt-DJ-5.15.2-436dfc17c8")
-find_package(Qt5 CONFIG REQUIRED COMPONENTS Widgets Quick)
-set(CMAKE_AUTOMOC ON) #qt headers (Q_OBJECT etc)
-set(CMAKE_AUTORCC ON) #qt qrc files
-#set(CMAKE_AUTOUIC ON) #qt: ui files (qt designer)
-set(CMAKE_INCLUDE_CURRENT_DIR ON) #look for headers in current dir
+find_package(Qt6 CONFIG REQUIRED COMPONENTS Widgets Quick Sql)
 
-#taglib
-add_subdirectory(external/taglib)
+add_subdirectory(Tests)
+add_subdirectory(External/MiniAudio)
+add_subdirectory(External/Taglib)
 
-add_executable(${PROJECT_NAME}
-        main.cpp
-        MainWindow.cpp
-        MainWindow.h
-        resources/resources.qrc
+set(SOURCES
+	Source/Audio.cpp
+	Source/Controller.cpp
+	Source/Database.cpp
+	Source/Main.cpp
+	Source/Playlist.cpp
+	Source/Tracklist.cpp
+)
+set(HEADERS
+	Include/Audio.h
+	Include/Controller.h
+	Include/Database.h
+	Include/FxSuite.h
+	Include/ImageProvider.h
+	Include/Playlist.h
+	Include/Tracklist.h
+)
+qt_add_resources(RESOURCES
+	Resources/Resources.qrc
 )
 
-target_link_libraries(trackInfo PUBLIC
-        taglib
-        Qt5::Widgets
-        Qt5::Quick
+if(APPLE)
+	set(APP_ICON ${CMAKE_SOURCE_DIR}/Resources/Images/TrackPlayer.icns)
+	list(APPEND RESOURCES ${APP_ICON})
+
+	set(MACOSX_BUNDLE_BUNDLE_NAME "Track Player")
+	set(MACOSX_BUNDLE_ICON_FILE TrackPlayer.icns)
+	set_source_files_properties(${APP_ICON}
+		PROPERTIES MACOSX_PACKAGE_LOCATION "Resources"
+	)
+endif()
+
+qt_add_executable(${PROJECT_NAME} MACOSX_BUNDLE
+	${SOURCES}
+	${HEADERS}
+	${RESOURCES}
 )
 
-target_include_directories(trackInfo PUBLIC
-        "${PROJECT_SOURCE_DIR}"
-        "${PROJECT_SOURCE_DIR}/external/taglib"
+target_link_libraries(${PROJECT_NAME} PRIVATE
+	Qt6::Widgets
+	Qt6::Quick
+	Qt6::Sql
+	MiniAudio
+	Taglib
 )
