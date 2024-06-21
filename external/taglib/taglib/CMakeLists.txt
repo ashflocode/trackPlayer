@@ -6,26 +6,26 @@ file(GLOB_RECURSE TAGLIB_HEADER_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "*.
 file(GLOB_RECURSE TAGLIB_SOURCE_FILES RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "*.cpp")
 set(TAGLIB_SRC ${TAGLIB_HEADER_FILES} ${TAGLIB_SOURCE_FILES})
 
-if(NOT MSVC)
-	include(CheckCXXCompilerFlag)
-	check_cxx_compiler_flag(-mavx2  COMPILER_SUPPORTS_AVX2)
-	check_cxx_compiler_flag(-mxsave COMPILER_SUPPORTS_XSAVE)
-	set(IS_X86_BASED CMAKE_SYSTEM_PROCESSOR MATCHES "(x86)|(X86)|(amd64)|(AMD64)")
+#if(NOT MSVC)
+#	include(CheckCXXCompilerFlag)
+#	check_cxx_compiler_flag(-mavx2  COMPILER_SUPPORTS_AVX2)
+#	check_cxx_compiler_flag(-mxsave COMPILER_SUPPORTS_XSAVE)
+#	set(IS_X86_BASED CMAKE_SYSTEM_PROCESSOR MATCHES "(x86)|(X86)|(amd64)|(AMD64)")
+#
+#	if (COMPILER_SUPPORTS_AVX2 AND COMPILER_SUPPORTS_XSAVE AND IS_X86_BASED)
+#		set_source_files_properties(
+#			toolkit/avx2search.cpp
+#			PROPERTIES
+#				COMPILE_FLAGS "-mavx2 -mxsave"
+#		)
+#	endif()
+#endif()
 
-	if (COMPILER_SUPPORTS_AVX2 AND COMPILER_SUPPORTS_XSAVE AND IS_X86_BASED)
-		set_source_files_properties(
-			toolkit/avx2search.cpp 
-			PROPERTIES 
-				COMPILE_FLAGS "-mavx2 -mxsave"
-		)
-	endif()
-endif()
-
-add_library(taglib ${TAGLIB_SRC})
+add_library(Taglib ${TAGLIB_SRC})
 
 if(MSVC)
 	target_compile_options(
-		taglib
+		Taglib
 		PRIVATE
 			"/wd4100" # unreferenced formal parameter
 			"/wd4267" # conversion from 'size_t' to 't', possible loss of data
@@ -41,7 +41,7 @@ else()
 
 
 	target_compile_options(
-		taglib
+		Taglib
 		PUBLIC
 			$<$<BOOL:${IGNORE_DEPRECIATED_COPY}>:-Wno-deprecated-copy>
 		PRIVATE
@@ -51,16 +51,16 @@ else()
 	)
 endif()
 
-#target_link_libraries(taglib PUBLIC Boost::atomic airUtils)
+#target_link_libraries(Taglib PUBLIC Boost::atomic airUtils)
 
-target_compile_definitions(taglib PRIVATE WITH_ASF WITH_MP4 TAGLIB_NO_CONFIG HAVE_BOOST_ATOMIC)
-target_compile_definitions(taglib PUBLIC TAGLIB_STATIC)
-#target_compile_definitions(taglib PUBLIC TAGLIB_USE_EXTERNAL_FILE_IO)
+target_compile_definitions(Taglib PRIVATE WITH_ASF WITH_MP4 TAGLIB_NO_CONFIG HAVE_BOOST_ATOMIC)
+target_compile_definitions(Taglib PUBLIC TAGLIB_STATIC)
+#target_compile_definitions(Taglib PUBLIC TAGLIB_USE_EXTERNAL_FILE_IO)
 
-target_include_directories(taglib INTERFACE ${CMAKE_CURRENT_LIST_DIR}/../)
+target_include_directories(Taglib INTERFACE ${CMAKE_CURRENT_LIST_DIR}/../)
 
-target_include_directories(taglib PRIVATE ${CMAKE_CURRENT_LIST_DIR})
-target_include_directories(taglib PRIVATE 
+target_include_directories(Taglib PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+target_include_directories(Taglib PRIVATE
 	toolkit
 	asf
 	mpeg
@@ -90,8 +90,8 @@ target_include_directories(taglib PRIVATE
 
 
 if(ZLIB_FOUND)
-	target_link_libraries(taglib PUBLIC ${ZLIB_LIBRARIES})
+	target_link_libraries(Taglib PUBLIC ${ZLIB_LIBRARIES})
 else()
-	target_link_libraries(taglib PUBLIC Qt5::Core)
+	target_link_libraries(Taglib PUBLIC Qt6::Core)
 endif()
 

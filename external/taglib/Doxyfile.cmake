@@ -21,7 +21,7 @@ DETAILS_AT_TOP         = NO
 INHERIT_DOCS           = YES
 DISTRIBUTE_GROUP_DOC   = NO
 TAB_SIZE               = 4
-ALIASES                = 
+ALIASES                =
 OPTIMIZE_OUTPUT_FOR_C  = NO
 OPTIMIZE_OUTPUT_JAVA   = NO
 SUBGROUPING            = YES
@@ -46,7 +46,7 @@ GENERATE_TODOLIST      = NO
 GENERATE_TESTLIST      = NO
 GENERATE_BUGLIST       = NO
 GENERATE_DEPRECATEDLIST= NO
-ENABLED_SECTIONS       = 
+ENABLED_SECTIONS       =
 MAX_INITIALIZER_LINES  = 30
 SHOW_USED_FILES        = YES
 #---------------------------------------------------------------------------
@@ -57,7 +57,7 @@ WARNINGS               = YES
 WARN_IF_UNDOCUMENTED   = NO
 WARN_IF_DOC_ERROR      = YES
 WARN_FORMAT            = "$file:$line: $text"
-WARN_LOGFILE           = 
+WARN_LOGFILE           =
 #---------------------------------------------------------------------------
 # configuration options related to the input files
 #---------------------------------------------------------------------------
@@ -66,14 +66,14 @@ FILE_PATTERNS          = *.h \
                          *.hh \
                          *.H
 RECURSIVE              = YES
-EXCLUDE                = 
+EXCLUDE                =
 EXCLUDE_SYMLINKS       = NO
-EXCLUDE_PATTERNS       = 
-EXAMPLE_PATH           = 
-EXAMPLE_PATTERNS       = 
+EXCLUDE_PATTERNS       =
+EXAMPLE_PATH           =
+EXAMPLE_PATTERNS       =
 EXAMPLE_RECURSIVE      = NO
-IMAGE_PATH             = 
-INPUT_FILTER           = 
+IMAGE_PATH             =
+INPUT_FILTER           =
 FILTER_SOURCE_FILES    = NO
 #---------------------------------------------------------------------------
 # configuration options related to source browsing
@@ -89,7 +89,7 @@ VERBATIM_HEADERS       = YES
 #---------------------------------------------------------------------------
 ALPHABETICAL_INDEX     = YES
 COLS_IN_ALPHA_INDEX    = 5
-IGNORE_PREFIX          = 
+IGNORE_PREFIX          =
 #---------------------------------------------------------------------------
 # configuration options related to the HTML output
 #---------------------------------------------------------------------------
@@ -101,8 +101,8 @@ HTML_FOOTER            = @CMAKE_SOURCE_DIR@/doc/api-footer.html
 HTML_STYLESHEET        = @CMAKE_SOURCE_DIR@/doc/taglib-api.css
 HTML_ALIGN_MEMBERS     = YES
 GENERATE_HTMLHELP      = NO
-CHM_FILE               = 
-HHC_LOCATION           = 
+CHM_FILE               =
+HHC_LOCATION           =
 GENERATE_CHI           = NO
 BINARY_TOC             = NO
 TOC_EXPAND             = NO
@@ -119,8 +119,8 @@ LATEX_CMD_NAME         = latex
 MAKEINDEX_CMD_NAME     = makeindex
 COMPACT_LATEX          = NO
 PAPER_TYPE             = letter
-EXTRA_PACKAGES         = 
-LATEX_HEADER           = 
+EXTRA_PACKAGES         =
+LATEX_HEADER           =
 PDF_HYPERLINKS         = YES
 USE_PDFLATEX           = YES
 LATEX_BATCHMODE        = NO
@@ -132,8 +132,8 @@ GENERATE_RTF           = NO
 RTF_OUTPUT             = rtf
 COMPACT_RTF            = NO
 RTF_HYPERLINKS         = NO
-RTF_STYLESHEET_FILE    = 
-RTF_EXTENSIONS_FILE    = 
+RTF_STYLESHEET_FILE    =
+RTF_EXTENSIONS_FILE    =
 #---------------------------------------------------------------------------
 # configuration options related to the man page output
 #---------------------------------------------------------------------------
@@ -146,8 +146,8 @@ MAN_LINKS              = NO
 #---------------------------------------------------------------------------
 GENERATE_XML           = NO
 XML_OUTPUT             = xml
-XML_SCHEMA             = 
-XML_DTD                = 
+XML_SCHEMA             =
+XML_DTD                =
 #---------------------------------------------------------------------------
 # configuration options for the AutoGen Definitions output
 #---------------------------------------------------------------------------
@@ -158,32 +158,32 @@ GENERATE_AUTOGEN_DEF   = NO
 GENERATE_PERLMOD       = NO
 PERLMOD_LATEX          = NO
 PERLMOD_PRETTY         = YES
-PERLMOD_MAKEVAR_PREFIX = 
+PERLMOD_MAKEVAR_PREFIX =
 #---------------------------------------------------------------------------
-# Configuration options related to the preprocessor   
+# Configuration options related to the preprocessor
 #---------------------------------------------------------------------------
 ENABLE_PREPROCESSING   = YES
 MACRO_EXPANSION        = NO
 EXPAND_ONLY_PREDEF     = NO
 SEARCH_INCLUDES        = YES
-INCLUDE_PATH           = 
-INCLUDE_FILE_PATTERNS  = 
+INCLUDE_PATH           =
+INCLUDE_FILE_PATTERNS  =
 PREDEFINED             = DO_NOT_DOCUMENT \
                          DOXYGEN \
                          WITH_MP4 \
                          WITH_ASF
-EXPAND_AS_DEFINED      = 
+EXPAND_AS_DEFINED      =
 SKIP_FUNCTION_MACROS   = YES
 #---------------------------------------------------------------------------
-# Configuration::addtions related to external references   
+# Configuration::addtions related to external references
 #---------------------------------------------------------------------------
-TAGFILES               = 
-GENERATE_TAGFILE       = 
+TAGFILES               =
+GENERATE_TAGFILE       =
 ALLEXTERNALS           = NO
 EXTERNAL_GROUPS        = YES
 PERL_PATH              = /usr/bin/perl
 #---------------------------------------------------------------------------
-# Configuration options related to the dot tool   
+# Configuration options related to the dot tool
 #---------------------------------------------------------------------------
 CLASS_DIAGRAMS         = YES
 HIDE_UNDOC_RELATIONS   = YES
@@ -197,14 +197,14 @@ INCLUDED_BY_GRAPH      = YES
 CALL_GRAPH             = NO
 GRAPHICAL_HIERARCHY    = YES
 DOT_IMAGE_FORMAT       = png
-DOT_PATH               = 
-DOTFILE_DIRS           = 
+DOT_PATH               =
+DOTFILE_DIRS           =
 MAX_DOT_GRAPH_WIDTH    = 1024
 MAX_DOT_GRAPH_HEIGHT   = 1024
 MAX_DOT_GRAPH_DEPTH    = 0
 GENERATE_LEGEND        = YES
 DOT_CLEANUP            = YES
 #---------------------------------------------------------------------------
-# Configuration::addtions related to the search engine   
+# Configuration::addtions related to the search engine
 #---------------------------------------------------------------------------
 SEARCHENGINE           = NO

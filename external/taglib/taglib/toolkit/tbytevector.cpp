@@ -74,11 +74,11 @@ int findChar(
   if(byteAlign <= 0 || offset + 1 > dataSize)
     return -1;
 
-  const auto fastResult = findCharFast(reinterpret_cast<const char*>(&*dataBegin), dataSize, c, offset);
+  const int fastResult = findCharFast(reinterpret_cast<const char*>(&*dataBegin), dataSize, c, offset);
   if(fastResult != -1)
     return fastResult;
 
-  for(auto it = dataBegin + offset; it < dataEnd; it += byteAlign)
+  for(std::__wrap_iter<const char *> it = dataBegin + offset; it < dataEnd; it += byteAlign)
   {
     if(*it == c)
       return (it - dataBegin);
@@ -146,7 +146,7 @@ int findVector(
   // Search result should return with position 2 instead of 1.
   if(byteAlign == 1)
   {
-    const auto fastResult = findVectorFast(reinterpret_cast<const char*>(&*dataBegin),
+    const int fastResult = findVectorFast(reinterpret_cast<const char*>(&*dataBegin),
       dataSize, reinterpret_cast<const char*>(&*patternBegin), patternSize, offset);
     if(fastResult != -1)
       return fastResult;
@@ -156,11 +156,11 @@ int findVector(
   // In the current implementation of TagLib, data and patterns are too small
   // for such algorithms to work effectively.
 
-  for(auto it = dataBegin + offset; it < dataEnd - patternSize + 1; it += byteAlign)
+  for(std::__wrap_iter<const char *> it = dataBegin + offset; it < dataEnd - patternSize + 1; it += byteAlign)
   {
 
-    auto itData = it;
-    auto itPattern = patternBegin;
+    std::__wrap_iter<const char *> itData = it;
+    std::__wrap_iter<const char *> itPattern = patternBegin;
 
     while(*itData == *itPattern)
     {
